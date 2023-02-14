@@ -127,7 +127,7 @@ def music():
     stop()
     r.set('out', "True")
     #'{}.wav'.format(catalog[random.randint(0,4)])
-    wf = wave.open("fantasy.wav", 'rb')
+    wf = wave.open("letgo.wav", 'rb')
 
     # instantiate PyAudio (1)
     p = pyaudio.PyAudio()
