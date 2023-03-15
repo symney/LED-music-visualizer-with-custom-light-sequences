@@ -17,7 +17,19 @@ import signal
 wf=None
 stream=None
 p=None
-amount=0
+fps=60
+frames=1
+last=time.time()
+def frame_counter():
+    global fps
+    global last
+    global frames
+    if time.time()-last>=1:
+        last=time.time()
+        print(frames)
+        frames=0
+    frames+=1
+
 #next is to calculate frames per second and by frames i mean light sequences a second
 #timer
 #redis setup plus stop function for lights
@@ -67,14 +79,28 @@ import board
 import neopixel
 
 LED_COUNT   = 150     # Number of LED pixels.
-LED_PIN     = board.D18   # GPIO pin
+LED_PIN     = board.D21   # GPIO pin
 LED_BRIGHTNESS = 1  # LED brightness
 LED_ORDER = neopixel.GRB # order of LED colours. May also be GRBW, GRBW, or RGB
 
 # Create NeoPixel object with appropriate configuration.
 strip = neopixel.NeoPixel(LED_PIN, LED_COUNT, brightness = LED_BRIGHTNESS, auto_write=False, pixel_order = LED_ORDER)
 
-
+def signal_handler(one,two):
+    global strip
+    stop()
+    print(strip)
+    strip.deinit()
+    gpio_pin=18
+    GPIO.setmode(GPIO.BCM)
+    GPIO.setup(gpio_pin, GPIO.OUT)
+    GPIO.output(gpio_pin,0)
+    print("shutting down the server")
+    sys.exit(0)
+signal.signal(signal.SIGTERM, signal_handler)
+signal.signal(signal.SIGHUP, signal_handler)
+signal.signal(signal.SIGINT, signal_handler)
+signal.signal(signal.SIGQUIT, signal_handler)
 
 
 #Schema Setups
@@ -157,39 +183,31 @@ def music():
     global wf
     global stream
     global p
-    global amount
     catalog=["fantasy","goshas","home","letgo","whip","artic"]
     stop()
     r.set('out', "True")
     strip.fill([0,0,0])
     #'{}.wav'.format(catalog[random.randint(0,4)])
-    wf = wave.open("music/letgo.wav", 'rb')
-
+    wf = wave.open("music/giveme.wav", 'rb')
     # instantiate PyAudio (1)
-    p = pyaudio.PyAudio();
-
+    p = pyaudio.PyAudio()
+    print(wf.getframerate())
     # define callback (2)
     def callback(in_data, frame_count, time_info, status):
+        frame_counter()
         data = wf.readframes(frame_count)
         byte=int(data[0])
-        #print(int(data[0]))
-       # print(r.get('out'))
-       # print("----data---")
-       # print(time_info)
-       # print(status)
         if not str(r.get('out'))=="b'True'":
             print("aborted")
             return (data, pyaudio.paAbort)
-        color_set=[50,0,0]
         vol=int((byte*75)/255)
-        for led in range(0,0):
-            if led <vol:
-                strip[led]=color_set
-            else:
-                strip[led]=[0,0,0]
+        for led in range(50,-1,-1):
+            strip[led+1]=strip[led]
+        if vol>50:
+            strip[0]=[vol,vol,vol]
+        else:
+            strip[0]=[0,0,0]
         strip.show()
-
-            
         return (data, pyaudio.paContinue)
 
     # open stream using callback (3)
@@ -197,7 +215,8 @@ def music():
                     channels=wf.getnchannels(),
                     rate=wf.getframerate(),
                     output=True,
-                    stream_callback=callback)
+                    stream_callback=callback,
+                    frames_per_buffer=512)#this is the chunk
 
     # start the stream (4)
     # send response that stream has started
@@ -223,9 +242,10 @@ def superfades():
             it=1
         num=0
         while num <255 and num >=0 and str(r.get('out'))=="b'True'":
-            print(num)
+            frame_counter()
+            #print(num)
             values[idx]+=it
-            print(values)
+            #print(values)
             strip.fill(values)
             if sep>LED_COUNT:
                 sep_it=-1
@@ -387,4 +407,4 @@ if __name__ == '__main__':
         pass
     app.config['ASK_VERIFY_REQUESTS'] = True
     context = ('cert.pem', 'key.pem')#certificate and key files
-    app.run(debug=True, ssl_context=context)
+    app.run(debug=False, ssl_context=context)
