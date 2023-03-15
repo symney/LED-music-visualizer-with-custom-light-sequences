@@ -7,17 +7,17 @@ Project is a work in progress and I am actiely working on it.
 
 
 <h1>Working Features</h1>
-*Changing the color of all the lights at once (FULL RGB)<br>
-*Changing the color of specific lights of choice<br>
-*Saving and presetting colors<br>
-*Creating a visual representation of the volume spikes within the song<br>
+* Changing the color of all the lights at once (FULL RGB)<br>
+* Changing the color of specific lights of choice<br>
+* Saving and presetting colors<br>
+* Creating a visual representation of the volume spikes within the song<br>
 
 <h1>Non Working features</h1>
-*Making the music visualization buttom more user friendly<br>
-*Making the music visualization represent frequecy, notes, instruments, etc <br>
-*Creating preset patterns instead of just colors including gradients and basic multi color sequences<br>
-*Optimizing the music visualization aspect of the project to work on the raspberry pi's limited hardware<br>
-*making the Alexa skill widely available<br>
+* Making the music visualization button more user friendly<br>
+* Making the music visualization represent frequecy, notes, instruments, etc <br>
+* Creating preset patterns instead of just colors including gradients and basic multi color sequences<br>
+* Optimizing the music visualization aspect of the project to work on the raspberry pi's limited hardware<br>
+* making the Alexa skill widely available<br>
 
 <h1> Video demo's</h1>
 
