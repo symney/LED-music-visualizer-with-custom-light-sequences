@@ -1,40 +1,29 @@
 # LED Visualizer
-<br>This is a python webserver that allows you to control a sequence of led lights with custom commands all from your phone. Unlike store bought versions of typical LED lights, you actually have control of every led in the strip and each light can change color on a full range of RGB. It also has the capability to integrate with alexa voice commands.<br>
+<br>This is a python webserver that allows you to control a sequence of led lights with custom commands all from your phone. Unlike store bought versions of typical LED lights, you actually have control of every led in the strip and each light can change color on a full range of RGB. While the skill is private, if published, the lights server can accept alexa commands!<br>
 <br>
-The coolest part about this project however is that is can create light sequences based off of the waveform of a song
-
-
-<h1>The features from version 1</h1>
-* Persistent login and login storage<br>
-* Real time messaging<br>
-
-<h1>New Features</h1>
-Updated Login Security and fields<br>
-User Searching<br>
-Multiple chat Windows<br>
-Persistent Messaging<br>
-Private Messaging<br>
-Profile Pictures<br>
-File Uploads<br>
-Typing Indicators<br>
+The coolest part about this project however is that it can create light sequences based off the waveform of a song<br>
+Project is a work in progress and I am actiely working on it.
 
 
 
-<h1> The Tech Stack</h1>
-* MongoDb to store user login information and chat data<br>
-* Multer for file Uploads<br>
-* Passport JS for login security<br>
-* Express For networking with Node.js<br>
-* NodeJS as the backend js runtime enviornment<br>
-* HTML/JS/CSS for the visuals<br>
-* SOCKET IO for the real time messaging protocol,typing indicators, and searching<br>
-<h1>How to set up</h1>
-1) install Node .js<br>
-2) clone the project to a folder<br>
-3) run npm install<br>
-4) Set up a mongo database and replace the database uri with your uri<br>
-5) node index.js<br>
+<h1>Working Features</h1>
+Changing the color of all the lights at once (FULL RGB)<br>
+Changing the color of specific lights of choice<br>
+Saving and presetting colors<br>
+Creating a visual representation of the volume spikes within the song<br>
 
+<h1>Non Working features</h1>
+Making the music visualization buttom more user friendly<br>
+Making the music visualization represent frequecy, notes, instruments, etc <br>
+Creating preset patterns instead of just colors including gradients and basic multi color sequences<br>
+Optimizing the music visualization aspect of the project to work on the raspberry pi's limited hardware<br>
+making the Alexa skill widely available<br>
+
+<h1> Video demo's</h1>
+
+
+<h1> How it works</h1>
+A web server is created on the raspberry pi that displays the dashboard via the internet. Then by sending get requests and post requests respectiely, you can change the color,open the music visualizer, and save colors.The raspberry pi is connected 
 
 <h1> Usage Notes</h1>
 Create an account first by using create account button once an account is created you will be taken to the application automatically <br>
