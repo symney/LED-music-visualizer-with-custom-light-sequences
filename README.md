@@ -19,8 +19,10 @@ Project is a work in progress and I am actiely working on it.
 * Optimizing the music visualization aspect of the project to work on the raspberry pi's limited hardware<br>
 * making the Alexa skill widely available<br>
 
-<h1> Video demo's</h1>
-
+<h1> Video Demo's</h1>
+Alexa Demo: https://www.youtube.com/watch?v=FkUgFsIhVAY<br>
+PIN 18 Light Visualization demo: https://www.youtube.com/watch?v=fJEWPVKAbS4<br>
+Web App Demo: https://www.youtube.com/watch?v=6mnmuUjLy4Y<br>
 
 <h1> How it works</h1>
 A web server is created on the raspberry pi that displays the dashboard via the internet. Then by sending get requests and post requests respectiely, you can change the color,open the music visualizer, and save colors.The raspberry pi is connected 
