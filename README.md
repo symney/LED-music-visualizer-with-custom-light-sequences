@@ -58,5 +58,7 @@ So pin 18 is used for clock frequency signals or something really specifc like t
 * connect to your raspberry pi with a usb to ethernet adapter and connect an ethernet cord to your computer<br><br>
 * ssh into the pi with ssh@pi.raspberrypi.local (this is the pi's host name you can also replace it with the ip but in my experience this will be the easiest way to connect)<br><br>
 * the default password should be raspberry for the pi account and you should be in<br><br>
-* if your raspberry pi still has no internet restart the ics service on windows it can say its running but not work properly. Restarting it always fixes this issue
+* if your raspberry pi still has no internet restart the ics service on windows it can say its running but not work properly. Restarting it always fixes this issue<br><br><br>
+* side note if you have access to your internet routers admin portal,you can confgure the raspberry pi to have wifi set up on it in the os installer. Then find the local ip address on your admin portal the ssh pi@*local address*
+
 
