@@ -1,5 +1,5 @@
 # LED Visualizer
-<br>A python web server that allows you to run a music led visualizer. You can also create color sequences for the lights as well, providing a plethora of more options than any store bought product. While the alexa skill is private, if published, the lights server can accept alexa commands (visible in the alexa demo)!<br>
+<br>A python web server that allows you to visualize your music with an LED strip. You can also create color sequences for the lights as well, providing a plethora of more options than any store bought product. While the alexa skill is private, if published, the lights server can accept alexa commands (visible in the alexa demo)!<br>
 <br>
 PLEASE VIEW THE DEMO'S FIRST<br>
 Project is a work in progress.
