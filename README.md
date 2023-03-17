@@ -30,13 +30,15 @@ A web server is created on the raspberry pi that displays the dashboard via a Fl
 <h1> Installation</h1>
 * Create an account with ngrok first to generate your auth token <br>
 * Clone the repository onto the linux machine<br>
-* run the installation script in the installation scripts folder (do not run the ngrok one)<br>
-*<br>
-*<br>
-*<br>
-*<br>
-*<br>
-*<br>
+* run the all_install.sh script in the installation scripts folder (do not run the ngrok one)<br>
+* change the directory to the python folder and run the init_db.py file<br>
+* switch back to the previous directory and run sudo ./start.sh<br>
+* copy the ngrok link and paste in your browser to access (the site was built for mobile so make sure to set developer settings in the browser to mobile view<br>
 
+<h1> Circuit Diagram and instructions</h1>
+![image](https://user-images.githubusercontent.com/53664279/225862662-df604721-6674-43b0-b8c1-95ca2c320a85.png)
+* connect the green wire of the lights to GPIO 21 (for fun connect it to GPIO 18)<br>
+* connect ground of the pi and ground of the lights to the ground of the power supply (you need common grounds for this to work<br>
+* connect the power of the lights to the power of the power supply<br>
 
 
