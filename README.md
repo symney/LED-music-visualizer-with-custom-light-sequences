@@ -23,7 +23,7 @@ Web App Demo: https://www.youtube.com/watch?v=6mnmuUjLy4Y<br>
 * making the Alexa skill widely available<br>
 
 <h1> How it works</h1>
-A web server is created on the raspberry pi that displays the dashboard via a Flask Server in Python. Then by sending get requests and post requests respectiely, you can change the color,open the music visualizer, and save colors. 
+A flask web server is created that controls the web dashbaord. Then by sending get requests and post requests respectively, you can change the color,open the music visualizer, and save colors. The alexa endpoints in the server file act as the api for alexa communication. All of the dashboard is done in html,css, and JS with JQuery.
 
 <h1> What you will need</h1>
 * A raspberry pi (preferably 4 works on 3 but can have slight performance issues with the songs if not using the song provided, has not been tested on any lower spec) <br><br>
