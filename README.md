@@ -1,7 +1,7 @@
 # LED Visualizer
-<br>This is a python webserver that allows you to control a sequence of led lights with custom commands all from your phone. Unlike store bought versions of typical LED lights, you actually have control of every led in the strip and each light can change color on a full range of RGB. While the alexa skill is private, if published, the lights server can accept alexa commands (visible in the alexa demo)!<br>
+<br>A python web server that allows you to run a music led visualizer. You can also create color sequences for the lights as well, providing a plethora of more options than any store bought product. While the alexa skill is private, if published, the lights server can accept alexa commands (visible in the alexa demo)!<br>
 <br>
-The coolest part about this project however is that it can create light sequences based off the waveform of a song<br>
+PLEASE VIEW THE DEMO'S FIRST<br>
 Project is a work in progress.
 
 <h1> Video Demo's</h1>
@@ -59,6 +59,6 @@ So pin 18 is used for clock frequency signals or something really specifc like t
 * ssh into the pi with ssh@pi.raspberrypi.local (this is the pi's host name you can also replace it with the ip but in my experience this will be the easiest way to connect)<br><br>
 * the default password should be raspberry for the pi account and you should be in<br><br>
 * if your raspberry pi still has no internet restart the ics service on windows it can say its running but not work properly. Restarting it always fixes this issue<br><br><br>
-* side note if you have access to your internet routers admin portal,you can confgure the raspberry pi to have wifi set up on it in the os installer. Then find the local ip address on your admin portal the ssh pi@*local address*
+* side note if you have access to your internet routers admin portal,you can configure the raspberry pi to have wifi set up on it in the os installer. Then find the local ip address on your admin portal the ssh pi@*local address*
 
 
