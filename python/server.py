@@ -407,4 +407,4 @@ if __name__ == '__main__':
         pass
     app.config['ASK_VERIFY_REQUESTS'] = True
     context = ('cert.pem', 'key.pem')#certificate and key files
-    app.run(debug=False, ssl_context=context)
+    app.run(debug=False, ssl_context=context,host='0.0.0.0')
